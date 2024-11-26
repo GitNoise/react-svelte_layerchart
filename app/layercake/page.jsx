@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div>
       <h1>LayerCake</h1>
-      <button style={{ margin: "12px 0" }} onClick={randomizeValues}>
+      <button className="bg-primary/10 px-4 py-2 border border-primary/50 rounded hover:bg-primary/20" onClick={randomizeValues}>
         Random data
       </button>
 

@@ -11,15 +11,26 @@
   "dependencies": {
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",
+    "dotenv": "^16.4.5",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
     "layercake": "^8.4.2",
-    "layerchart": "^0.59.1",
+    "layerchart": "^0.59.4",
+    "mobx": "^6.13.5",
+    "mobx-react-lite": "^4.0.7",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3",
     "svelte": "^4",
     "svelte-loader": "^3.2.4",
     "svelte-preprocess": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
   }
 }

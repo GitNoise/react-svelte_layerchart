@@ -13,8 +13,6 @@ export function SvelteWrapper({ component: Component, props }) {
 
     app.current = c;
 
-    console.log(app.current);
-
     return () => {
       app.current.$destroy();
     };
@@ -26,10 +24,5 @@ export function SvelteWrapper({ component: Component, props }) {
     }
   }, [props]);
 
-  return (
-    <fieldset style={{ padding: 16, width: "100%" }}>
-      <legend> Svelte component </legend>
-      <div style={{ width: "100%" }} ref={container} />
-    </fieldset>
-  );
+  return <div style={{ width: "100%" }} ref={container} />;
 }
