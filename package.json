@@ -19,8 +19,8 @@
     "mobx": "^6.13.5",
     "mobx-react-lite": "^4.0.7",
     "next": "14.2.15",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react": "18.3.1",
+    "react-dom": "18.2.0",
     "svelte": "^4",
     "svelte-loader": "^3.2.4",
     "svelte-preprocess": "^6.0.3"

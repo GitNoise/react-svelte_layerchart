@@ -4,7 +4,7 @@ import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 import Chart from "./svelte/Chart.svelte";
 import { SvelteWrapper } from "../../utils/SvelteWrapper";
-import { useStores } from "@/statemanagement/stores";
+import { useStores } from "../../statemanagement/stores";
 
 const Index = observer(() => {
   const stores = useStores();

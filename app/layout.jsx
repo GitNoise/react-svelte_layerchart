@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 
+import { StoreProvider } from "../statemanagement/stores";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -11,7 +13,7 @@ export default function RootLayout({ children }) {
             maxWidth: 600,
           }}
         >
-          {children}
+          <StoreProvider>{children}</StoreProvider>
         </div>
       </body>
     </html>
