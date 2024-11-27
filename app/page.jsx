@@ -1,6 +1,6 @@
 "use client";
 
-import { store, StoreContext } from "../statemanagement/stores";
+import { stores, StoreContext } from "../statemanagement/stores";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <a href="/layercake">Test LayerCake</a>
       <br />
       <br />
-      <StoreContext.Provider value={store}>
+      <StoreContext.Provider value={stores}>
         <a href="/layerchart">Test LayerChart</a>
       </StoreContext.Provider>
     </div>

@@ -1,8 +1,8 @@
-import path from "path";
-import { sveltePreprocess } from "svelte-preprocess";
+const path = require("path");
+const { sveltePreprocess } = require("svelte-preprocess");
 
-export default {
-  webpack(config, { isServer }) {
+module.exports = {
+  webpack: (config, { isServer }) => {
     // Add Svelte loader configuration
     config.module.rules.push({
       test: /\.svelte$/,
@@ -17,14 +17,13 @@ export default {
       ],
     });
 
-    // Resolve svelte imports correctly (including internal paths)
-    // Ensure svelte/internal is resolved correctly
+    // Resolve Svelte imports correctly (including internal paths)
     config.resolve.alias = {
       ...config.resolve.alias,
       svelte: path.resolve("node_modules", "svelte/src/runtime"),
     };
 
-    // Ensure that `.svelte` extension is handled by Webpack
+    // Ensure `.svelte` extensions are handled by Webpack
     config.resolve.extensions.push(".svelte");
 
     return config;
