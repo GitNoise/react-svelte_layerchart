@@ -1,18 +1,16 @@
 "use client";
 
-import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
-import Chart from "./svelte/Chart.svelte";
-import { SvelteWrapper } from "../../utils/SvelteWrapper";
 import { useStores } from "../../statemanagement/stores";
+import { BarChart } from "../components/BarChart";
 
 const Index = observer(() => {
   const stores = useStores();
-  const { randomizeValues, data, caller, doToggle, toggle } = stores.chartStore;
+  const { randomizeValues, caller, doToggle, toggle } = stores.chartStore;
 
   return (
     <div>
-      <h1 className="text-xl mb-8">LayerChart</h1>
+      <h1 className="text-xl mb-8">LayerChart in /app</h1>
 
       <button
         className="bg-primary/10 px-4 py-2 border border-primary/50 rounded hover:bg-primary/20"
@@ -37,21 +35,16 @@ const Index = observer(() => {
         <div> {!toggle ? "yes" : "no"}</div>
       </div>
 
-      {Chart && (
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "stretch",
-            marginTop: 24,
-          }}
-        >
-          <SvelteWrapper
-            component={Chart}
-            props={{ data: toJS(data), store: stores.chartStore, height: 300 }}
-          />
-        </div>
-      )}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "stretch",
+          marginTop: 24,
+        }}
+      >
+        <BarChart />
+      </div>
 
       <div className="mt-16">randomizeValues called from: {caller}</div>
     </div>

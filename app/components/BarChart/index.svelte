@@ -1,26 +1,24 @@
+<script context="module">
+  import { connect } from "../../../utils/mobxAuto";
+</script>
+
 <script>
   import { BarChart, Tooltip } from "layerchart";
   import { accessor } from "layerchart/utils/common";
 
-  import { mobxToSvelte } from "/utils/mobxToSvelte";
-
-  export let data = [];
+  const { autorun } = connect();
   export let height = 300;
   export let store;
 
-  const xKey = "value";
-  const yKey = "year";
+  let toggle;
+  let data;
 
-  // transform values to numbers
-  data.forEach((d) => {
-    d[xKey] = +d[xKey];
+  $: autorun(() => {
+    toggle = store.toggle;
+    data = store.data;
   });
 
-  // Wire up mobx toggle to svelte store
-  const toggle = mobxToSvelte(() => store.toggle);
-
-  // subscribe to changes in toggle
-  $: color = $toggle ? "fill-[pink]" : "fill-[green]";
+  $: color = toggle ? "fill-[pink]" : "fill-[green]";
 </script>
 
 <div class="my-8">
@@ -38,8 +36,8 @@
     <BarChart
       {data}
       orientation="horizontal"
-      x={xKey}
-      y={yKey}
+      x={"value"}
+      y={"year"}
       bandPadding={0.05}
       props={{
         xAxis: {
